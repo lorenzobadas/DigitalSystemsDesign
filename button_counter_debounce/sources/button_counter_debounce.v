@@ -259,7 +259,7 @@ module top(
     wire [2:0] sel;
     wire [3:0] seg0, seg1, seg2, seg3, seg4, seg5, seg6, seg7, in_seg;
     genen u0(clk, ~reset, en);
-    cnt_8 u1(clk, ~reset, sel);
+    cnt_8 u1(en, ~reset, sel);
     dec3_8 u2(sel, AN0, AN1, AN2, AN3, AN4, AN5, AN6, AN7);
     mux_4 u3(seg0, seg1, seg2, seg3, seg4, seg5, seg6, seg7, sel, in_seg);
     seven_segments u4(in_seg, CA, CB, CC, CD, CE, CF, CG);
