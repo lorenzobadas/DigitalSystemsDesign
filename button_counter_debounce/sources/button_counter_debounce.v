@@ -176,6 +176,10 @@ module debounce_FSM(
                 push = 0;
                 reset_timer = 0;
             end
+            default: begin
+                push = 0;
+                reset_timer = 0;
+            end
         endcase
     end
     
