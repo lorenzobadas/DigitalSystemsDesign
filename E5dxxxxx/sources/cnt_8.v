@@ -15,7 +15,7 @@ module cnt_8(
 
     // new sel logic
     always @(sel, refresh) begin
-        if (refresh) sel_nexta = sel + 1;
+        if (refresh) sel_next = sel + 1;
         else sel_next = sel;
     end
 
