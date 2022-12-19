@@ -14,6 +14,6 @@ module E5d00814(
     wire [3:0] seg1 = 4'h1;
     wire [3:0] seg0 = 4'h4;
 
-    eight_display u0(ck, seg0, seg1, seg2, seg3, seg4, seg5, seg6, seg7, AN, {CG, CF, CE, CD, CC, CB, CA});
+    eight_display u0(ck, seg0, seg1, seg2, seg3, seg4, seg5, seg6, seg7, AN, {CA, CB, CC, CD, CE, CF, CG});
 
 endmodule
