@@ -4,7 +4,7 @@ module count10(
     input ck,
     input inc,
     output carry_out,
-    output reg [3:0] count,
+    output reg [3:0] count
 );
 
     reg [3:0] count_next;
@@ -31,7 +31,7 @@ module count6(
     input ck,
     input inc,
     output carry_out,
-    output [3:0] count
+    output reg [3:0] count
 );
 
     reg [3:0] count_next;
