@@ -8,7 +8,7 @@ module count_ms(
     parameter [16:0] COUNT_MAX = 17'd100_000;
     reg [16:0] count, count_next;
 
-    alwyas @(posedge ck) begin
+    always @(posedge ck) begin
         count <= count_next;
     end
 
