@@ -114,8 +114,6 @@ module seven_segments(
 
 endmodule
 
-`timescale 1ns/1ps
-
 module eight_display(
     input ck,
     input [3:0] seg0, seg1, seg2, seg3, seg4, seg5, seg6, seg7,
