@@ -5,8 +5,8 @@ module gen_refresh(
     output refresh
 );
 
-    reg [26:0] cnt, cnt_next;
-    parameter [26:0] MAX_CNT = 27'd99_999;
+    reg [16:0] cnt, cnt_next;
+    parameter [16:0] MAX_CNT = 17'd99_999;
 
     always @(posedge ck) begin
         cnt <= cnt_next;
