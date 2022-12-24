@@ -3,7 +3,7 @@
 module hh_control(
     input ck, reset,
     input hh,
-    input clock_alarm, carry_60,
+    input clock_alarm, carry_from_minutes,
     output up_clock24, up_alarm24
 );
 
@@ -36,10 +36,10 @@ module hh_control(
         endcase
     end
 
-    always @(state, carry_60) begin
+    always @(state, carry_from_minutes) begin
         case (state)
             IDLE: begin
-                up_clock24 = carry_60;
+                up_clock24 = carry_from_minutes;
                 up_alarm24 = 0;
             end
             UP_CLOCK: begin
@@ -47,15 +47,15 @@ module hh_control(
                 up_alarm24 = 0;
             end
             UP_ALARM: begin
-                up_clock24 = carry_60;
+                up_clock24 = carry_from_minutes;
                 up_alarm24 = 1;
             end
             WAIT: begin
-                up_clock24 = carry_60;
+                up_clock24 = carry_from_minutes;
                 up_alarm24 = 0;
             end
             default: begin
-                up_clock24 = carry_60;
+                up_clock24 = carry_from_minutes;
                 up_alarm24 = 0;
             end
         endcase
