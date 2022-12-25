@@ -13,8 +13,8 @@ module half_seconds_enable(
         else count <= count_next;
     end
 
-    always @(count) begin
-        if (count == MAX_COUNT) count_next = 0;
+    always @(count, clear) begin
+        if (count == MAX_COUNT || clear) count_next = 0;
         else count_next = count + 1;
     end
 

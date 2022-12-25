@@ -41,17 +41,20 @@ module mm_control(
                 else state_next = WAIT_SEC;
             end
             AUTO1: begin
-                if (hit) state_next = INC_UP1;
-                else if (!mm && !hit) state_next = AUTO2;
+                if (!mm) state_next = AUTO2;
+                else if (hit) state_next = INC_UP1;
                 else state_next = AUTO1;
             end
             INC_UP1: begin
                 state_next = AUTO1;
             end
             AUTO2: begin
-                if (hit) state_next = INC_UP2;
-                else if (mm && !hit) state_next = STOP_AUTO;
+                if (mm) state_next = STOP_AUTO;
+                else if (hit) state_next = INC_UP2;
                 else state_next = AUTO2;
+            end
+            INC_UP2: begin
+                state_next = AUTO2;
             end
             STOP_AUTO: begin
                 if (!mm) state_next = IDLE;
