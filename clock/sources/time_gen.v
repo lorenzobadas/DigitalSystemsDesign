@@ -5,7 +5,7 @@ module time_gen(
     output sec, min, refresh
 );
 
-    seconds_enable u0(ck, reset, sec);
+    half_seconds_enable u0(ck, reset, sec);
     minutes_enable u1(ck, reset, min);
     refresh_enable u2(ck, refresh);
 

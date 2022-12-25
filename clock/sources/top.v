@@ -40,7 +40,9 @@ module top(
 
     four_display u8(ck, refresh, seg0, seg1, seg2, seg3, AN, {CA, CB, CC, CD, CE, CF, CG});
 
-    assign DP = (clock_alarm) ? ~(sec & ~AN[2]) : AN[2];
+    wire sec_tog;
+    toggle u9(ck, reset, sec, sec_tog);
+    assign DP = (clock_alarm) ? ~(sec_tog & ~AN[2]) : AN[2];
 
     assign alarm = (switch_deb && ({h3, h2, h1, h0} == {a3, a2, a1, a0})) ? 1 : 0;
 
