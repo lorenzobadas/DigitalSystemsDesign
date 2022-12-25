@@ -4,7 +4,7 @@ module mm_control(
     input ck, reset,
     input mm,
     input clock_alarm, min,
-    output up_clock60, up_alarm60
+    output reg up_clock60, up_alarm60
 );
 
     parameter [1:0]

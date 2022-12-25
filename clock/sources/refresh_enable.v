@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module gen_refresh(
+module refresh_enable(
     input ck,
     output refresh
 );

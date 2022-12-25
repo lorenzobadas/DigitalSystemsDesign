@@ -4,7 +4,7 @@ module hh_control(
     input ck, reset,
     input hh,
     input clock_alarm, carry_from_minutes,
-    output up_clock24, up_alarm24
+    output reg up_clock24, up_alarm24
 );
 
     parameter [1:0]

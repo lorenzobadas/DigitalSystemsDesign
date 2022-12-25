@@ -95,8 +95,8 @@ module four_display(
     wire [1:0] sel;
     wire [3:0] in_seg;
     
-    cnt_8 u1(ck, refresh, sel);
+    cnt_4 u1(ck, refresh, sel);
     mux_4 u2(seg0, seg1, seg2, seg3, sel, in_seg);
-    dec3_8 u3(sel, an);
+    dec2_4 u3(sel, an);
     seven_segments u4(in_seg, c);
 endmodule

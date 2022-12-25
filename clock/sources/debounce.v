@@ -12,8 +12,8 @@ module count_ms(
         count <= count_next;
     end
 
-    always @(count) begin
-        if (count == COUNT_MAX) count_next = 0;
+    always @(count, clear) begin
+        if (count == COUNT_MAX || clear) count_next = 0;
         else count_next = count + 1;
     end
 

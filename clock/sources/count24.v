@@ -9,7 +9,8 @@ module count24(
     reg [7:0] display3_next, display4_next;
 
     always @(posedge ck) begin
-        {display4, display3} <= {display4_next, display3_next};
+        display4 <= display4_next;
+        display3 <= display3_next;
     end
 
     always @(up24, display3, display4) begin
@@ -27,7 +28,8 @@ module count24(
             end
         end
         else begin
-            {display4_next, display3_next} = {display4, display3};
+            display4_next = display4;
+            display3_next = display3;
         end
     end
 
